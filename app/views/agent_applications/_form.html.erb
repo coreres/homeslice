@@ -1,29 +1,118 @@
-<%= simple_form_for(@agent_application) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.association :user %>
-    <%= f.input :status %>
-    <%= f.input :company_name %>
-    <%= f.input :company_address %>
-    <%= f.input :company_city %>
-    <%= f.input :company_zip %>
-    <%= f.input :company_state %>
-    <%= f.input :check_payable_to %>
-    <%= f.input :payment_address %>
-    <%= f.input :payment_city %>
-    <%= f.input :payment_zip %>
-    <%= f.input :company_phone %>
-    <%= f.input :agent_cell_phone %>
-    <%= f.input :social_security %>
-    <%= f.input :company_fax %>
-    <%= f.input :license_number %>
-    <%= f.input :license_expiration %>
-    <%= f.input :eo_policy_number %>
-    <%= f.input :eo_expiration %>
+<%= form_for @agent_application, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :status, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :status, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :company_name, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :company_name, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :company_address, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :company_address, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :company_city, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :company_city, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :company_zip, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :company_zip, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :company_state, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :company_state, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :check_payable_to, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :check_payable_to, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :payment_address, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :payment_address, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :payment_city, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :payment_city, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :payment_zip, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :payment_zip, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :company_phone, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :company_phone, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :agent_cell_phone, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :agent_cell_phone, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :social_security, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :social_security, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :company_fax, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :company_fax, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :license_number, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :license_number, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :license_expiration, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.date_select :license_expiration, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :eo_policy_number, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :eo_policy_number, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :eo_expiration, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.date_select :eo_expiration, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  agent_applications_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

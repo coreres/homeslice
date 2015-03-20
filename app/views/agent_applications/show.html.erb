@@ -1,99 +1,58 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = AgentApplication -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => AgentApplication %></h1>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @agent_application.user %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:status) %></dt>
+      <dd><pre class="prettyprint"><%= @agent_application.status %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:company_name) %></dt>
+      <dd><pre class="prettyprint"><%= @agent_application.company_name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:company_address) %></dt>
+      <dd><pre class="prettyprint"><%= @agent_application.company_address %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:company_city) %></dt>
+      <dd><pre class="prettyprint"><%= @agent_application.company_city %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:company_zip) %></dt>
+      <dd><pre class="prettyprint"><%= @agent_application.company_zip %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:company_state) %></dt>
+      <dd><pre class="prettyprint"><%= @agent_application.company_state %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:check_payable_to) %></dt>
+      <dd><pre class="prettyprint"><%= @agent_application.check_payable_to %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:payment_address) %></dt>
+      <dd><pre class="prettyprint"><%= @agent_application.payment_address %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:payment_city) %></dt>
+      <dd><pre class="prettyprint"><%= @agent_application.payment_city %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:payment_zip) %></dt>
+      <dd><pre class="prettyprint"><%= @agent_application.payment_zip %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:company_phone) %></dt>
+      <dd><pre class="prettyprint"><%= @agent_application.company_phone %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:agent_cell_phone) %></dt>
+      <dd><pre class="prettyprint"><%= @agent_application.agent_cell_phone %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:social_security) %></dt>
+      <dd><pre class="prettyprint"><%= @agent_application.social_security %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:company_fax) %></dt>
+      <dd><pre class="prettyprint"><%= @agent_application.company_fax %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:license_number) %></dt>
+      <dd><pre class="prettyprint"><%= @agent_application.license_number %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:license_expiration) %></dt>
+      <dd><pre class="prettyprint"><%= @agent_application.license_expiration %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:eo_policy_number) %></dt>
+      <dd><pre class="prettyprint"><%= @agent_application.eo_policy_number %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:eo_expiration) %></dt>
+      <dd><pre class="prettyprint"><%= @agent_application.eo_expiration %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Status:</strong>
-  <%= @agent_application.status %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              agent_applications_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_agent_application_path(@agent_application), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              agent_application_path(@agent_application),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Company name:</strong>
-  <%= @agent_application.company_name %>
-</p>
-
-<p>
-  <strong>Company address:</strong>
-  <%= @agent_application.company_address %>
-</p>
-
-<p>
-  <strong>Company city:</strong>
-  <%= @agent_application.company_city %>
-</p>
-
-<p>
-  <strong>Company zip:</strong>
-  <%= @agent_application.company_zip %>
-</p>
-
-<p>
-  <strong>Company state:</strong>
-  <%= @agent_application.company_state %>
-</p>
-
-<p>
-  <strong>Check payable to:</strong>
-  <%= @agent_application.check_payable_to %>
-</p>
-
-<p>
-  <strong>Payment address:</strong>
-  <%= @agent_application.payment_address %>
-</p>
-
-<p>
-  <strong>Payment city:</strong>
-  <%= @agent_application.payment_city %>
-</p>
-
-<p>
-  <strong>Payment zip:</strong>
-  <%= @agent_application.payment_zip %>
-</p>
-
-<p>
-  <strong>Company phone:</strong>
-  <%= @agent_application.company_phone %>
-</p>
-
-<p>
-  <strong>Agent cell phone:</strong>
-  <%= @agent_application.agent_cell_phone %>
-</p>
-
-<p>
-  <strong>Social security:</strong>
-  <%= @agent_application.social_security %>
-</p>
-
-<p>
-  <strong>Company fax:</strong>
-  <%= @agent_application.company_fax %>
-</p>
-
-<p>
-  <strong>License number:</strong>
-  <%= @agent_application.license_number %>
-</p>
-
-<p>
-  <strong>License expiration:</strong>
-  <%= @agent_application.license_expiration %>
-</p>
-
-<p>
-  <strong>Eo policy number:</strong>
-  <%= @agent_application.eo_policy_number %>
-</p>
-
-<p>
-  <strong>Eo expiration:</strong>
-  <%= @agent_application.eo_expiration %>
-</p>
-
-<%= link_to 'Edit', edit_agent_application_path(@agent_application) %> |
-<%= link_to 'Back', agent_applications_path %>
