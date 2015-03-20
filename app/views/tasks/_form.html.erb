@@ -1,20 +1,64 @@
-<%= simple_form_for(@task) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :status %>
-    <%= f.association :user %>
-    <%= f.input :task_date %>
-    <%= f.input :task_time %>
-    <%= f.input :address %>
-    <%= f.input :city %>
-    <%= f.input :zip %>
-    <%= f.input :long_description %>
-    <%= f.input :short_description %>
+<%= form_for @task, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :title, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :title, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :status, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :status, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :task_date, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.date_select :task_date, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :task_time, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.time_select :task_time, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :address, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :address, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :city, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :city, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :zip, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :zip, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :long_description, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :long_description, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :short_description, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :short_description, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  tasks_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
