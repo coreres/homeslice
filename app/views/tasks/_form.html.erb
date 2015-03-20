@@ -1,0 +1,20 @@
+<%= simple_form_for(@task) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :status %>
+    <%= f.association :user %>
+    <%= f.input :task_date %>
+    <%= f.input :task_time %>
+    <%= f.input :address %>
+    <%= f.input :city %>
+    <%= f.input :zip %>
+    <%= f.input :long_description %>
+    <%= f.input :short_description %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
