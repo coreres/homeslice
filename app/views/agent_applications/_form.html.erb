@@ -1,0 +1,29 @@
+<%= simple_form_for(@agent_application) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :user %>
+    <%= f.input :status %>
+    <%= f.input :company_name %>
+    <%= f.input :company_address %>
+    <%= f.input :company_city %>
+    <%= f.input :company_zip %>
+    <%= f.input :company_state %>
+    <%= f.input :check_payable_to %>
+    <%= f.input :payment_address %>
+    <%= f.input :payment_city %>
+    <%= f.input :payment_zip %>
+    <%= f.input :company_phone %>
+    <%= f.input :agent_cell_phone %>
+    <%= f.input :social_security %>
+    <%= f.input :company_fax %>
+    <%= f.input :license_number %>
+    <%= f.input :license_expiration %>
+    <%= f.input :eo_policy_number %>
+    <%= f.input :eo_expiration %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
